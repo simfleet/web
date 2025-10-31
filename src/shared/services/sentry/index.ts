@@ -1,6 +1,6 @@
-import Sentry from "@sentry/react";
+import * as Sentry from "@sentry/react";
 
-import { envs } from "@/shared/envs.ts";
+import { envs } from "@/shared/envs";
 
 export function initSentry() {
   if (envs.environment !== "production") return;
@@ -10,8 +10,8 @@ export function initSentry() {
     environment: envs.environment,
     sendDefaultPii: true,
     integrations: [Sentry.browserTracingIntegration()],
-    sampleRate: envs.sentry.sampleRate,
-    tracesSampleRate: envs.sentry.tracesSampleRate,
+    sampleRate: Number(envs.sentry.sampleRate),
+    tracesSampleRate: Number(envs.sentry.tracesSampleRate),
     tracePropagationTargets: ["localhost"],
     enableLogs: true,
   });

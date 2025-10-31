@@ -9,7 +9,10 @@ export function initSentry() {
     dsn: envs.sentry.dsn,
     environment: envs.environment,
     sendDefaultPii: true,
-    integrations: [Sentry.browserTracingIntegration()],
+    integrations: [
+      Sentry.browserTracingIntegration(),
+      Sentry.consoleLoggingIntegration(),
+    ],
     sampleRate: Number(envs.sentry.sampleRate),
     tracesSampleRate: Number(envs.sentry.tracesSampleRate),
     tracePropagationTargets: ["localhost"],

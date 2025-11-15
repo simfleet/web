@@ -13,6 +13,7 @@
     "test:coverage": "vitest run --coverage"
   },
   "dependencies": {
+    "@radix-ui/react-slot": "^1.2.4",
     "@sentry/react": "^10.22.0",
     "@sentry/vite-plugin": "^4.6.0",
     "@tailwindcss/vite": "^4.1.16",

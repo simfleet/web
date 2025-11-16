@@ -54,6 +54,9 @@
     },
     "assist": {
       "enabled": true
+    },
+    "parser": {
+      "tailwindDirectives": true
     }
   },
   "json": {
